@@ -1,9 +1,9 @@
 import os
 
-first_file_name = input("Введите название первого файла")
-last_file_name = input("Введите название второго файла")
+first_file_name = input("Введите название первого файла:")
+last_file_name = input("Введите название второго файла:")
 
-first_number = int(first_file_name.split(". ")[0])
+first_number = int(first_file_name.split(".")[0])
 last_number = int(last_file_name.split(".")[0])  # Извлекаем номера из файлов
 
 folder_path = "files"  # Папка с файлами
@@ -13,7 +13,7 @@ if not os.path.exists(folder_path):
 
 for number in range(first_number, last_number + 1):
     curent_file_name = f"files {number}.txt"  # Создаем файлы
-    with open(curent_file_name, 'W', encoding="utf-8") as file:  # Записываем файлы
+    with open(curent_file_name, 'w', encoding="utf-8") as file:  # Записываем файлы
         file.write(f"Содержимое файла {curent_file_name}")
     print(f"Файл {curent_file_name} создан")
 
